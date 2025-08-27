@@ -41,7 +41,7 @@ export const AppContextProvider = (props) => {
     // function calculate to Course Duration
     const calculateTotalDuration = (course) => {
         let time = 0;
-        course.courseContent.map((chapter) => time += chapter.chapterContent.map(
+        course.courseContent.map((chapter) => chapter.chapterContent.map(
             (lecture) => time += lecture.lectureDuration
         ));
         return humanizeDuration(time * 60 * 1000, { units: ['h', 'm']});
@@ -71,7 +71,7 @@ export const AppContextProvider = (props) => {
     const value = {
         currency,
         allCourses,
-        navigate,
+        navigate,   
         calculateRating,
         isEducator,
         setIsEducator,
